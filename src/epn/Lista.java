@@ -39,11 +39,10 @@ public class Lista {
         }else{
             while(aux!=null){
                 if (pos == cont){
-                    //Devuelvo aux, con esto salimos de la función
+
                     return aux; 
                 }
-                
-                //Actualizo el siguiente
+
                 aux=aux.getSiguiente();
                 cont++;
                 
