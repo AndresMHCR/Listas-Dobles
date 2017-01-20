@@ -30,12 +30,25 @@ public class Lista {
 
 	  }
 	
-	public NodoDoble devolverNodo(int pos){
+	public int tamaño()
+	{
+		NodoDoble aux=inicio;
+		while(aux!=null)
+		{
+			size++;
+			aux=aux.getSiguiente();
+		}
+		return size;
+		
+	}
+	public NodoDoble buscar(int pos){
         NodoDoble aux=inicio;
-        int cont=0;
         
-        if(pos<0){
+        int cont=1;
+        
+        if(pos<1|| pos>=tamaño()){
             System.out.println("La posicion insertada no es correcta");
+            
         }else{
             while(aux!=null){
                 if (pos == cont){
@@ -47,11 +60,32 @@ public class Lista {
                 cont++;
                 
             }
+            
         }
+       
         
         return aux;
         
     }
+	
+	public NodoDoble buscar(String dato){
+        NodoDoble aux=inicio;
+        
+            while(aux!=null){
+                if (aux.getElement().equalsIgnoreCase(dato)){
+                    return aux; 
+                }
+                
+                aux=aux.getSiguiente();
+                
+                
+            }
+            return aux;
+        }
+        
+	public  void vaciar(){
+		  inicio=null;
+	 }
 	
 	public void imprimirLista(){
 		System.out.println("Contenido de la lista");

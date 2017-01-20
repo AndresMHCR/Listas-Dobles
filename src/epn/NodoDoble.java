@@ -56,10 +56,26 @@ public class NodoDoble {
 	public void setAnterior(NodoDoble anterior) {
 		this.anterior = anterior;
 	}
+	
 	@Override
 	public String toString() {
-		return "NodoDoble [element=" + element + ", siguiente=" + this.getSiguiente().getElement()
+		String cadena="";
+		if(this.getAnterior()==null)
+		{
+		cadena= "NodoDoble [element=" + element + ", siguiente=" + this.getSiguiente().getElement()
+				+ ", anterior= null]";
+		}
+		if(this.getSiguiente()==null)
+		{
+			cadena= "NodoDoble [element=" + element + ", siguiente= null" + ", anterior=" + 
+					this.getAnterior().getElement() + "]";
+		}
+		if(this.getAnterior()!= null && this.getSiguiente()!=null)
+		{			
+		cadena= "NodoDoble [element=" + element + ", siguiente=" + this.getSiguiente().getElement()
 				+ ", anterior=" + this.getAnterior().getElement() + "]";
+		}
+		return cadena;
 	}
 
 	
