@@ -36,7 +36,7 @@ public class Aplicacion2 {
 		else
 			System.out.println("El nombre ingresado no existe.");
 		
-		System.out.println("Ingrese el nombre que desea eliminar.");
+		System.out.println("Ingrese el nombre que desea eliminar.");// eliminar por dato
 		String dat = scn.nextLine();
 		if(lisdob.buscar(dat)!=null){
 			lisdob.eliminar(dat);
@@ -45,14 +45,14 @@ public class Aplicacion2 {
 		else
 			System.out.println("El nombre ingresado no existe.");
 		
-		System.out.println("Ingrese la posicion que desea eliminar.");
+		System.out.println("Ingrese la posicion que desea eliminar.");// eliminar por posicion
 		int datoe = scn.nextInt();
 		if(lisdob.buscar(datoe)!=null){
 			lisdob.eliminar(datoe);
 			lisdob.imprimirLista();
 		}
 		else
-			System.out.println("El nombre ingresado no existe.");
+			System.out.println("El posicion ingresada no existe.");
 		
 		lisdob.vaciar(); //vaciado de lista
 		if (lisdob.estaVacia())
