@@ -7,11 +7,14 @@ public class Aplicacion2 {
 	public static void main(String[] args) {
 		Lista lisdob = new Lista();
 		
+		
+		lisdob.agregarAlFinal("Lucia");
 		lisdob.agregarAlInicio("Juan");
 		lisdob.agregarAlInicio("Juana");
 		lisdob.agregarAlInicio("Pedro");
-		lisdob.agregarAlInicio("Lorena");
-		lisdob.agregarAlInicio("Lucia");
+		lisdob.agregarAlFinal("Lorena");
+		
+		
 		
 		lisdob.imprimirLista();// imprimimos la lista
 		System.out.println("\nLa lista contiene "+lisdob.tamaño()+" elementos.\n");// numero de elementos de lista
@@ -30,6 +33,24 @@ public class Aplicacion2 {
 		String dato= scn.nextLine();
 		if(lisdob.buscar(dato)!=null)
 			System.out.println(lisdob.buscar(dato));
+		else
+			System.out.println("El nombre ingresado no existe.");
+		
+		System.out.println("Ingrese el nombre que desea eliminar.");
+		String dat = scn.nextLine();
+		if(lisdob.buscar(dat)!=null){
+			lisdob.eliminar(dat);
+			lisdob.imprimirLista();
+		}
+		else
+			System.out.println("El nombre ingresado no existe.");
+		
+		System.out.println("Ingrese la posicion que desea eliminar.");
+		int datoe = scn.nextInt();
+		if(lisdob.buscar(datoe)!=null){
+			lisdob.eliminar(datoe);
+			lisdob.imprimirLista();
+		}
 		else
 			System.out.println("El nombre ingresado no existe.");
 		
